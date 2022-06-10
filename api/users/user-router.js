@@ -24,7 +24,7 @@ router.post('/login', (req, res, next) =>{
     User.login(req.body)
         .then(user => {
             if(user){
-                res.status(200).json({message: `Welcome back! ${user[0].username}`})
+                res.status(200).json({message: `Welcome back ${user[0].username}!`})
             } else {
                 res.status(404).json({message: 'invalid login'})
             }
