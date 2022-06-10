@@ -9,7 +9,7 @@ const usersRouter = require('./users/user-router');
 server.use('/api', usersRouter)
 
 server.get('*', (req, res) => {
-    res.send(`<h2>Let's write some code!</h2>`);
+    res.send(`<h2>I swear there's users somewhere...</h2>`);
   });
 
 module.exports = server;
