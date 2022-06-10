@@ -5,7 +5,7 @@ function getId() {
 }
 
 let users = [
-  { id: getId(), username: 'Captain', password: 1234 },
+  { id: getId(), username: 'Captain', password: '1234' },
   { id: getId(), username: 'Doggo', password: 'abcd' },
 ]
 
@@ -25,11 +25,10 @@ module.exports = {
     async login({username,  password}) {
       const checkedUser = users.filter(user => user.username === username);
       console.log(checkedUser);
-      if(checkedUser !== []){
-        if(checkedUser.password === password){
+      if(checkedUser.length === 1 && checkedUser[0].password === password){
           return checkedUser;
         }
-      }
+      
 
     }
 }
